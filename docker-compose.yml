@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: query_mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: query_root_password
+      MYSQL_DATABASE: query_db
+      MYSQL_USER: query_user
+      MYSQL_PASSWORD: query_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    networks:
+      - query_network
+
+  redis:
+    image: redis:latest
+    container_name: query_redis_container
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/data:/data
+      - ./redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - query_network
+
+networks:
+  query_network:
+    driver: bridge
