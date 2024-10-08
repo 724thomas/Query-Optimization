@@ -3,6 +3,8 @@ package com.wonjoon.query_optimization.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
