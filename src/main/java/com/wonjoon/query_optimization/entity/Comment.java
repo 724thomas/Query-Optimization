@@ -12,6 +12,8 @@ import java.util.List;
 @Builder
 @ToString
 public class Comment {
+    public static final String CACHE_KEY = "comments";
+    public static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

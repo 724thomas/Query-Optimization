@@ -12,6 +12,9 @@ import java.util.List;
 @Builder
 @ToString
 public class Post {
+    public static final String CACHE_KEY = "posts";
+    public static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

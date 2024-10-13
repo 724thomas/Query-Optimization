@@ -13,6 +13,7 @@ import java.util.List;
 @ToString
 public class User {
     public static final String CACHE_KEY = "users";
+    public static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
